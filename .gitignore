@@ -1,0 +1,26 @@
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+.venv/
+venv/
+
+# macOS
+.DS_Store
+
+# Notebook checkpoints
+.ipynb_checkpoints/
+
+# Local data files
+data/*.csv
+data/*.parquet
+
+# Generated outputs
+output/*.png
+output/*.jpg
+output/*.gif
+output/*.mp4
+
+# Environment files
+.env
