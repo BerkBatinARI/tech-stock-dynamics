@@ -2,3 +2,4 @@ yfinance
 pandas
 matplotlib
 numpy
+bar_chart_race

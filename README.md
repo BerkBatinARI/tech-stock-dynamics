@@ -8,12 +8,15 @@ Goal: build a clean quant-style workflow: data → cleaned price panel → norma
 * * *
 ## Project structure (high level)
 
-* `src/` — reproducible scripts you run from terminal (`python src/...`)
+* `src/main.py` — downloads and prepares the raw + normalized datasets
+* `src/plot_static.py` — creates a static normalized performance chart
+* `src/plot_rankings.py` — creates a static daily ranking chart
+* `src/animate_rankings.py` — creates the animated tech stock dynamics chart
 * `data/` — downloaded datasets (kept out of git except a `.gitkeep`)
 * `output/` — generated outputs (ignored by git, except selected tracked figures if needed)
 
 * * *
-## What this project will do
+## What this project does
 
 * Download daily adjusted close data for selected major tech stocks
 * Clean and align the time series into a common trading-date panel
@@ -21,17 +24,19 @@ Goal: build a clean quant-style workflow: data → cleaned price panel → norma
 * Build ranking data showing how leadership changes over time
 * Produce:
   * static comparison charts
+  * a static ranking chart
   * an animated bar-chart-style visualisation of changing stock leadership
 
 * * *
-## Planned build steps
+## Current stock universe
 
-* Step 1: initialise repo structure and reproducible setup
-* Step 2: download and clean historical stock data
-* Step 3: normalise prices and prepare ranking dataset
-* Step 4: build a static comparison chart
-* Step 5: build the animated visualisation
-* Step 6: export outputs and finalise documentation
+* AAPL
+* MSFT
+* NVDA
+* GOOGL
+* AMZN
+* META
+* TSLA
 
 * * *
 ## Reproduce locally
