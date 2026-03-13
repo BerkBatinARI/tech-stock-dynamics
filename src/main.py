@@ -34,10 +34,8 @@ def normalize_prices(close_df: pd.DataFrame) -> pd.DataFrame:
 def main() -> None:
     project_root = Path(__file__).resolve().parents[1]
     data_dir = project_root / "data"
-    output_dir = project_root / "output"
 
     data_dir.mkdir(exist_ok=True)
-    output_dir.mkdir(exist_ok=True)
 
     close_df = download_prices()
     close_df.to_csv(data_dir / "tech_prices.csv")
@@ -48,8 +46,6 @@ def main() -> None:
     print("Download and normalization complete.")
     print(f"Saved raw prices: {data_dir / 'tech_prices.csv'}")
     print(f"Saved normalized prices: {data_dir / 'tech_prices_normalized.csv'}")
-    print(f"Normalized shape: {normalized_df.shape}")
-    print(normalized_df.tail())
 
 
 if __name__ == "__main__":
