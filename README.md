@@ -5,6 +5,12 @@ A reproducible finance visualization project that explores how major technology 
 
 Goal: build a clean quant-style workflow: data → cleaned price panel → normalised performance series → ranking dynamics → static plots + animated visualisation.
 
+## Preview
+
+![Normalized Tech Stock Performance](output/normalized_tech_stock_performance.png)
+
+**Key takeaway:** this project compares major tech stocks on a normalized basis, showing how relative leadership changes over time rather than comparing raw share prices.
+
 * * *
 ## Project structure (high level)
 
