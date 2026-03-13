@@ -31,6 +31,11 @@ def normalize_prices(close_df: pd.DataFrame) -> pd.DataFrame:
     return normalized_df
 
 
+def build_rankings(normalized_df: pd.DataFrame) -> pd.DataFrame:
+    ranking_df = normalized_df.rank(axis=1, ascending=False, method="first")
+    return ranking_df
+
+
 def main() -> None:
     project_root = Path(__file__).resolve().parents[1]
     data_dir = project_root / "data"
@@ -43,9 +48,13 @@ def main() -> None:
     normalized_df = normalize_prices(close_df)
     normalized_df.to_csv(data_dir / "tech_prices_normalized.csv")
 
-    print("Download and normalization complete.")
+    ranking_df = build_rankings(normalized_df)
+    ranking_df.to_csv(data_dir / "tech_rankings.csv")
+
+    print("Download, normalization, and ranking complete.")
     print(f"Saved raw prices: {data_dir / 'tech_prices.csv'}")
     print(f"Saved normalized prices: {data_dir / 'tech_prices_normalized.csv'}")
+    print(f"Saved rankings: {data_dir / 'tech_rankings.csv'}")
 
 
 if __name__ == "__main__":
